@@ -10,21 +10,38 @@ function getFetch(){
       .then(data => {
 
         console.log(data[0].meanings[0].definitions)
-        // data[0].meanings.foreach(obj => {
+        
 
+        // data[0].meanings[0].definitions.forEach(obj =>{
+        //     console.log(obj.definition)
+        //     //create an li
+        //     const li = document.createElement('li')
+        //     //add text to li
+        //     li.textContent = obj.definition
+        //     //append the li to the ul
+        //     document.querySelector('ul').appendChild(li)
         // })
 
-        data[0].meanings[0].definitions.forEach(obj =>{
-            console.log(obj.definition)
-            //create an li
+        // console.log(data)
+
+        data[0].meanings.forEach(obj => {
+          if(obj.partOfSpeech === 'noun'){
+
+            obj.definitions.forEach(def =>{
+            console.log(def.definition)
+
             const li = document.createElement('li')
             //add text to li
-            li.textContent = obj.definition
+            li.textContent = def.definition
             //append the li to the ul
-            document.querySelector('ul').appendChild(li)
+            document.querySelector('#noun').appendChild(li)
+            })
+            }
+           else if(obj.partOfSpeech === 'verb'){
+            
+          }
+          // console.log(obj.partOfSpeech)
         })
-
-        console.log(data)
        
         // document.querySelector('h3').innerText += data.title
       })
