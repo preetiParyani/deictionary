@@ -45,9 +45,12 @@ h1{
     margin: 2vh 0;
 }
 p{
-    font-size: 1em;
+    font-size: 1.1em;
     margin: 1vh 2vh;
     
+}
+p ul li{
+    list-style:disc;
 }
 main>section{
     margin: 0 auto;
@@ -75,6 +78,4 @@ footer nav{
 footer nav li{
     display: inline-block;
     margin: 2vh auto;
-    
-    
 }
